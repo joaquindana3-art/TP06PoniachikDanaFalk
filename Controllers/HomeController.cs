@@ -18,6 +18,13 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult PartidaIniciada(string nombre) {
+
+        
+        HttpContext.Session.SetString(, nombre);
+
+    }
+
     public IActionResult Privacy()
     {
         return View();

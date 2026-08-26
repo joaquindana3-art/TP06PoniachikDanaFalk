@@ -1,8 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+﻿<h1>Escapa de la agencia</h1>
+<h2>Enfrentate a los boss de Fortnite e intenta escapar. Muy pocos pueden...</h2>
+<form action="@Url.Action("PartidaIniciada/Home")">
+    Ingrese su nombre de usuario: <input type="text" placeholder="Nombre de usuario"> <br>
+    <input type="submit" placeholder="Enviar">
+</form>
