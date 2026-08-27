@@ -1,0 +1,17 @@
+<h1>Bienvenido a la primera habitación</h1>
+<p>Has entrado a la primera habitación del juego. Intenta pasar este ahorcado especial para pasar a la siguiente...</p>
+<div id="palabraOculta"></div> </br>
+<div id="divIntentos">
+Intentos restantes: <p id="intentos"></p></br>
+</div>
+<div id="resultado"></div>
+<div id="divLetra">
+Ingrese una letra: <input type="text" id="letra"/></br>
+</div>
+<input type="hidden" id="palabra" value="@ViewBag.palabra"></br>
+<button onclick="ArriesgarLetra()">Arriesgar letra</button></br>
+</br>
+<button id="jugarDeNuevo" onclick="/Home/PartidaIniciada">Jugar de nuevo</button></br>
+</br> 
+<p id="error"></p> </br>
+<script src="site.js"></script>

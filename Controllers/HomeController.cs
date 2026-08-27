@@ -20,8 +20,14 @@ public class HomeController : Controller
 
     public IActionResult PartidaIniciada(string nombre) {
 
-        
-        HttpContext.Session.SetString(, nombre);
+        BD bd = new BD();
+        List<string> listaAhorcado = new List<string> {"MIDAS", "SKYE", "BRUTUS", "TNTINA", "MIAUSCULOS", "LA AGENCIA", "LA GRUTA", "EL YATE", "LA PLATAFORMA", "EL TIBURON", "GRAPPLER", "ARCO DE BOOM", "MINIGUN DE BRUTUS", "FUSIL DE ASALTO", "SUBFUSIL DE TAMBOR", "FUSIL PESADO", "SUBFUSIL DE MIDAS", "FUSIL DE SKYE", "ARMA LEGENDARIA", "ESCAPAR", "VICTORIA", "SECRETOS", "ESPIONAJE", "AGENTES", "DERROTAR", "TARJETA DE ACCESO", "BOVEDA", "ESPADAS", "EXPLOSION", "LLAVE", "ESCAPAR DE LA AGENCIA"};
+        int idUsuario = bd.crearUsuario(nombre);
+        HttpContext.Session.SetString(idUsuario.ToString(), nombre);
+        Random rnd = new Random();
+        int numeroAleatorio = rnd.Next(1, listaAhorcado.Count);
+        ViewBag.palabra = listaAhorcado[numeroAleatorio];
+        return View("PrimeraHabitacion");
 
     }
 
