@@ -56,6 +56,7 @@ function resultado(palabraOculta, intentos) {
         palabraOculta.style.color = "white"
         divIntentos.style.color = "white"
         divLetras.style.color = "white"
+        document.getElementById("segundaHabitacion").hidden = false;
         
 
     }
