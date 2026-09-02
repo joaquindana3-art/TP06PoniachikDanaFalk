@@ -27,4 +27,11 @@ public class BD
         string query = "SELECT nombre FROM PalabrasAhorcado WHERE ID = @pID";
         return connection.QueryFirstOrDefault<string>(query, new { pID = numRandom });
     }
+
+    public List<PalabrasRosco> palabrasRosco()
+    {
+        using SqlConnection connection = new SqlConnection(_connectionString);
+        string query = "SELECT respuesta, letra, pista FROM PalabrasRosco";
+        return connection.Query<PalabrasRosco>(query).ToList();
+    }
 }

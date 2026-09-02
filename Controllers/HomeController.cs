@@ -33,6 +33,8 @@ public class HomeController : Controller
 
     public IActionResult SegundaHabitacion()
     {
+        BD bd = new BD();
+        ViewBag.palabrasRosco = bd.palabrasRosco();
         return View();
     }
 

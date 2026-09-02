@@ -39,57 +39,86 @@ function ArriesgarLetra() {
 
 }
 function resultado(palabraOculta, intentos) {
+    let jugarDeNuevo = document.getElementById("jugarDeNuevo");
+    let resultado = document.getElementById("resultado");
+    let divIntentos = document.getElementById("divIntentos");
+    const titulo = document.getElementById("titulo");
+    const descripcion = document.getElementById("descripcion");
+    let divLetras = document.getElementById("divLetras");
+    let segundaBtn = document.getElementById("segundaHabitacion");
 
-    let jugarDeNuevo = document.getElementById("jugarDeNuevo")
-    let resultado = document.getElementById("resultado")
-    let divIntentos = document.getElementById("divIntentos")
-    const titulo = document.getElementById("titulo")
-    const descripcion = document.getElementById("descripcion")
-    let divLetras = document.getElementById("divLetras")
     if (!palabraOculta.innerHTML.includes("_")) {
-
-        resultado.innerHTML = "Ganaste"
-        resultado.style.color = "lightgreen"
-        document.querySelector("main").style.backgroundColor = "darkgreen"
-        titulo.style.color = "white"
-        descripcion.style.color = "white"
-        palabraOculta.style.color = "white"
-        divIntentos.style.color = "white"
-        divLetras.style.color = "white"
-        document.getElementById("segundaHabitacion").hidden = false;
-        
-
+        resultado.innerHTML = "Ganaste";
+        resultado.style.color = "lightgreen";
+        document.querySelector("main").style.backgroundColor = "darkgreen";
+        descripcion.style.color = "white";
+        palabraOculta.style.color = "white";
+        divIntentos.style.color = "white";
+        divLetras.style.color = "white";
     }
+
     if (intentos.innerHTML < 0) {
-
-        resultado.innerHTML = "Perdiste. "
-        intentos.innerHTML = "NO TE QUEDAN INTENTOS"
-        palabraOculta.style.color = "white"
-        intentos.style.color = "white"
-        resultado.style.color = "pink"
-        document.querySelector("main").style.backgroundColor = "darkred"
-        titulo.style.color = "white"
-        descripcion.style.color = "white"
-        palabraOculta.style.color = "white"
-        divIntentos.style.color = "white"
-        divLetras.style.color = "white"
+        resultado.innerHTML = "Perdiste. ";
+        intentos.innerHTML = "NO TE QUEDAN INTENTOS";
+        palabraOculta.style.color = "white";
+        intentos.style.color = "white";
+        resultado.style.color = "pink";
+        document.querySelector("main").style.backgroundColor = "darkred";
+        descripcion.style.color = "white";
+        palabraOculta.style.color = "white";
+        divIntentos.style.color = "white";
+        divLetras.style.color = "white";
     }
 }
-function añadirPalabra() {
 
-    let palabraNueva = document.getElementById("palabraNueva")
-    
 
-}
 function limpiar() {
-
-    let intentos = document.getElementById("intentos")
-    let palabraOculta = document.getElementById("palabraOculta")
-    intentos.innerHTML = 5
+    let intentos = document.getElementById("intentos");
+    let palabraOculta = document.getElementById("palabraOculta");
+    intentos.innerHTML = 5;
+    palabraOculta.innerHTML = "";
     for (let i = 0; i < palabra.value.length; i++) {
+        palabraOculta.innerHTML += "_";
+    }
+}
 
-        palabraOculta.innerHTML += "_"
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function ArriesgarPalabra() {
+
+    const respuesta = document.getElementById("respuesta")
+    let palabraRosco = document.getElementById("palabraRosco")
+    let cantCorrectas = document.getElementById("cantPalabrasCorrectas")
+    let cantIncorrectas = document.getElementById("cantPalabrasIncorrectas")
+    if (respuesta.value.toUpperCase() === palabraRosco.value.toUpperCase()) {
+
+        cantCorrectas.innerHTML++
+
+    }
+    else {
+        cantIncorrectas.innerHTML++
     }
 
 }
+    if (respuesta.value.toUpperCase() === palabraRosco.value.toUpperCase()) {
+        resultado.innerHTML = "Ganaste";
+        resultado.style.color = "lightgreen";
+        document.querySelector("main").style.backgroundColor = "darkgreen";
+        descripcion.style.color = "white";
+        palabraOculta.style.color = "white";
+        divIntentos.style.color = "white";
+        divLetras.style.color = "white";
+    }

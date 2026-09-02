@@ -1,0 +1,12 @@
+<p>A: </p><input type="text" id="respuesta"/>
+<input hidden id="palabraRosco" value="@ViewBag.palabrasRosco[0]"></p>
+<div id="resultado"></div>
+<input hidden id="palabrasIncorrectas" value="@ViewBag.palabrasIncorrectas"></p>
+<input hidden id="palabrasCorrectas" value="@ViewBag.palabrasCorrectas"></p>
+<div>
+Palabras correctas: <p id="cantPalabrasCorrectas">0</p>
+</div>
+<div>
+Palabras incorrectas: <p id="cantPalabrasIncorrectas">0</p>
+</div>
+<button onclick="ArriesgarPalabra()">Arriesgar palabra</button></br>
