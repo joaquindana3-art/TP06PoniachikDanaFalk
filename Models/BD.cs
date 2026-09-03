@@ -31,7 +31,7 @@ public class BD
     public List<PalabrasRosco> palabrasRosco()
     {
         using SqlConnection connection = new SqlConnection(_connectionString);
-        string query = "SELECT respuesta, letra, pista FROM PalabrasRosco";
+        string query = "SELECT * FROM PalabrasRosco";
         return connection.Query<PalabrasRosco>(query).ToList();
     }
 }

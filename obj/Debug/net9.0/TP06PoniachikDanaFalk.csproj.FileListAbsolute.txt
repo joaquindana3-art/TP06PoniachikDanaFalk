@@ -166,9 +166,7 @@ C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\rjsmcshtml.dswa.cache.j
 C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\scopedcss\bundle\TP06PoniachikDanaFalk.styles.css
 C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\scopedcss\projectbundle\TP06PoniachikDanaFalk.bundle.scp.css
-C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\yupblgb4dr-b9sayid5wm.gz
 C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\2cjn5eamet-61n19gt1b8.gz
-C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\muupcp0o5b-6d9u6lzoqs.gz
 C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\3c2exhgivq-t1cqhe9u97.gz
 C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\qancl6cn3a-c2jlpeoesf.gz
 C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\8tfetlef3g-sejl45xvog.gz
@@ -379,3 +377,5 @@ C:\Users\50235406\TP06PoniachikDanaFalk\obj\Debug\net9.0\TP06PoniachikDanaFalk.g
 C:\Users\50235406\TP06PoniachikDanaFalk\obj\Debug\net9.0\ref\TP06PoniachikDanaFalk.dll
 C:\Users\50235406\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\yupblgb4dr-u0i6hhv4kj.gz
 C:\Users\50235406\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\muupcp0o5b-5t5s7vke2e.gz
+C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\yupblgb4dr-u0i6hhv4kj.gz
+C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\muupcp0o5b-pm92wzaq1a.gz

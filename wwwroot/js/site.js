@@ -1,11 +1,17 @@
 ﻿const palabra = document.getElementById("palabra")
-limpiar()
+if (palabra) {
+    limpiar()
+}
 function ArriesgarLetra() {
 
     const letra = document.getElementById("letra")
     let palabraOculta = document.getElementById("palabraOculta")
     let intentos = document.getElementById("intentos")
     let error = document.getElementById("error")
+    let i = document.getElementById("i")
+    if (!letra || !palabraOculta || !intentos || !error || !palabra) {
+        return
+    }
     let encontrado = false
     if (isNaN(letra.value) && letra.value.length === 1) {
 
@@ -18,6 +24,8 @@ function ArriesgarLetra() {
                 letraMostrada[i] = letra.value.toUpperCase()
                 palabraOculta.innerHTML = letraMostrada.join("")
                 encontrado = true
+                i.value = parseInt(i.value) + 1
+                
 
             }
 
@@ -73,9 +81,15 @@ function resultado(palabraOculta, intentos) {
 
 
 function limpiar() {
+    if (!palabra) {
+        return
+    }
     let intentos = document.getElementById("intentos");
     let palabraOculta = document.getElementById("palabraOculta");
-    intentos.innerHTML = 5;
+    if (!intentos || !palabraOculta) {
+        return
+    }
+    intentos.innerHTML = 3;
     palabraOculta.innerHTML = "";
     for (let i = 0; i < palabra.value.length; i++) {
         palabraOculta.innerHTML += "_";
@@ -103,22 +117,22 @@ function ArriesgarPalabra() {
     let palabraRosco = document.getElementById("palabraRosco")
     let cantCorrectas = document.getElementById("cantPalabrasCorrectas")
     let cantIncorrectas = document.getElementById("cantPalabrasIncorrectas")
+    let resultado = document.getElementById("resultado")
+    if (!respuesta || !palabraRosco || !cantCorrectas || !cantIncorrectas || !resultado) {
+        return
+    }
+
     if (respuesta.value.toUpperCase() === palabraRosco.value.toUpperCase()) {
 
-        cantCorrectas.innerHTML++
+        cantCorrectas.innerHTML++ 
+        resultado.innerHTML = "Correcto";
+        resultado.style.color = "green";
 
     }
     else {
         cantIncorrectas.innerHTML++
+        resultado.innerHTML = "Incorrecto";
+        resultado.style.color = "red";
     }
 
 }
-    if (respuesta.value.toUpperCase() === palabraRosco.value.toUpperCase()) {
-        resultado.innerHTML = "Ganaste";
-        resultado.style.color = "lightgreen";
-        document.querySelector("main").style.backgroundColor = "darkgreen";
-        descripcion.style.color = "white";
-        palabraOculta.style.color = "white";
-        divIntentos.style.color = "white";
-        divLetras.style.color = "white";
-    }

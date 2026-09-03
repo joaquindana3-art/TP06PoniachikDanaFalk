@@ -1,18 +1,13 @@
 namespace TP06PoniachikDanaFalk.Models;
 public class PalabrasRosco
 {
-    
-    private int ID;
-    private string respuesta;
-    private char letra;
-    private string pista;
+    public int ID { get; set; }
+    public string respuesta { get; set; } = string.Empty;
+    public string letra { get; set; } = string.Empty;
+    public string pista { get; set; } = string.Empty;
 
-    public PalabrasRosco(string respuesta2, char letra2, string pista2) {
-
-        respuesta = respuesta2;
-        letra = letra2;
-        pista = pista2;
-
+    public PalabrasRosco()
+    {
     }
 
 }

@@ -33,8 +33,42 @@ public class HomeController : Controller
 
     public IActionResult SegundaHabitacion()
     {
+        return CargarSegundaHabitacion(0, 0, 0, "");
+    }
+
+    [HttpPost]
+    public IActionResult SegundaHabitacion(string respuesta, int i, int palabrasCorrectas, int palabrasIncorrectas)
+    {
+        BD bd = new BD();
+        List<PalabrasRosco> palabrasRosco = bd.palabrasRosco();
+
+        if (i >= 0 && i < palabrasRosco.Count)
+        {
+            string respuestaUsuario = (respuesta ?? "").Trim();
+            string respuestaCorrecta = (palabrasRosco[i].respuesta ?? "").Trim();
+
+            if (string.Equals(respuestaUsuario, respuestaCorrecta, StringComparison.OrdinalIgnoreCase))
+            {
+                palabrasCorrectas++;
+                i++;
+                return CargarSegundaHabitacion(i, palabrasCorrectas, palabrasIncorrectas, "Correcto");
+            }
+
+            palabrasIncorrectas++;
+            return CargarSegundaHabitacion(i, palabrasCorrectas, palabrasIncorrectas, "Incorrecto");
+        }
+
+        return CargarSegundaHabitacion(i, palabrasCorrectas, palabrasIncorrectas, "Completaste el rosco");
+    }
+
+    private IActionResult CargarSegundaHabitacion(int i, int palabrasCorrectas, int palabrasIncorrectas, string resultado)
+    {
         BD bd = new BD();
         ViewBag.palabrasRosco = bd.palabrasRosco();
+        ViewBag.i = i;
+        ViewBag.palabrasCorrectas = palabrasCorrectas;
+        ViewBag.palabrasIncorrectas = palabrasIncorrectas;
+        ViewBag.resultado = resultado;
         return View();
     }
 

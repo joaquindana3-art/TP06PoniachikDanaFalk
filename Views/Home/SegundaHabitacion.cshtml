@@ -1,12 +1,41 @@
-<p>A: </p><input type="text" id="respuesta"/>
-<input hidden id="palabraRosco" value="@ViewBag.palabrasRosco[0]"></p>
-<div id="resultado"></div>
-<input hidden id="palabrasIncorrectas" value="@ViewBag.palabrasIncorrectas"></p>
-<input hidden id="palabrasCorrectas" value="@ViewBag.palabrasCorrectas"></p>
+@{
+    List<PalabrasRosco> palabrasRosco = ViewBag.palabrasRosco;
+    int i = ViewBag.i;
+    int palabrasCorrectas = ViewBag.palabrasCorrectas;
+    int palabrasIncorrectas = ViewBag.palabrasIncorrectas;
+    string resultado = ViewBag.resultado;
+}
+
 <div>
-Palabras correctas: <p id="cantPalabrasCorrectas">0</p>
+Palabras correctas: <p id="cantPalabrasCorrectas">@palabrasCorrectas</p>
 </div>
 <div>
-Palabras incorrectas: <p id="cantPalabrasIncorrectas">0</p>
+Palabras incorrectas: <p id="cantPalabrasIncorrectas">@palabrasIncorrectas</p>
 </div>
-<button onclick="ArriesgarPalabra()">Arriesgar palabra</button></br>
+
+@if (!string.IsNullOrEmpty(resultado))
+{
+    <div id="resultado">@resultado</div>
+}
+
+@if (palabrasRosco == null || palabrasRosco.Count == 0)
+{
+    <p>No hay palabras para jugar.</p>
+}
+else if (i >= palabrasRosco.Count)
+{
+    <p>Completaste el rosco.</p>
+}
+else
+{
+    <p id="letra">@palabrasRosco[i].letra</p>
+    <p id="pista">@palabrasRosco[i].pista</p>
+
+    <form asp-action="SegundaHabitacion" method="post">
+        <input type="text" id="respuesta" name="respuesta" required />
+        <input type="hidden" name="i" value="@i" />
+        <input type="hidden" name="palabrasCorrectas" value="@palabrasCorrectas" />
+        <input type="hidden" name="palabrasIncorrectas" value="@palabrasIncorrectas" />
+        <button type="submit">Arriesgar palabra</button>
+    </form>
+}
