@@ -17,14 +17,15 @@ Palabras incorrectas: <p id="cantPalabrasIncorrectas">@palabrasIncorrectas</p>
 {
     <div id="resultado">@resultado</div>
 }
-
-@if (palabrasRosco == null || palabrasRosco.Count == 0)
-{
-    <p>No hay palabras para jugar.</p>
-}
-else if (i >= palabrasRosco.Count)
+@if (i >= palabrasRosco.Count && palabrasCorrectas >= palabrasIncorrectas)
 {
     <p>Completaste el rosco.</p>
+    <a href="/Home/TerceraHabitacion">Siguiente habitación</a>
+}
+else if (i >= palabrasRosco.Count && palabrasCorrectas < palabrasIncorrectas)
+{
+    <p>Perdiste el rosco.</p>
+    <a href="/Home/SegundaHabitacion">Reintentar</a>
 }
 else
 {

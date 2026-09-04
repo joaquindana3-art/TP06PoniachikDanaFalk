@@ -44,10 +44,9 @@ public class HomeController : Controller
 
         if (i >= 0 && i < palabrasRosco.Count)
         {
-            string respuestaUsuario = (respuesta ?? "").Trim();
-            string respuestaCorrecta = (palabrasRosco[i].respuesta ?? "").Trim();
+            string respuestaCorrecta = palabrasRosco[i].respuesta.ToUpper();
 
-            if (string.Equals(respuestaUsuario, respuestaCorrecta, StringComparison.OrdinalIgnoreCase))
+            if ( respuesta.ToUpper() == respuestaCorrecta )
             {
                 palabrasCorrectas++;
                 i++;
@@ -57,8 +56,15 @@ public class HomeController : Controller
             palabrasIncorrectas++;
             return CargarSegundaHabitacion(i, palabrasCorrectas, palabrasIncorrectas, "Incorrecto");
         }
+        if (palabrasCorrectas >= palabrasIncorrectas)
+        {
+            return CargarSegundaHabitacion(i, palabrasCorrectas, palabrasIncorrectas, "Ganaste");
+        }
+        else
+        {
+            return CargarSegundaHabitacion(i, palabrasCorrectas, palabrasIncorrectas, "Perdiste");
+        }
 
-        return CargarSegundaHabitacion(i, palabrasCorrectas, palabrasIncorrectas, "Completaste el rosco");
     }
 
     private IActionResult CargarSegundaHabitacion(int i, int palabrasCorrectas, int palabrasIncorrectas, string resultado)
@@ -72,6 +78,10 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult TerceraHabitacion()
+    {
+        return View();
+    }
 
     public IActionResult Privacy()
     {
