@@ -377,5 +377,5 @@ C:\Users\50235406\TP06PoniachikDanaFalk\obj\Debug\net9.0\TP06PoniachikDanaFalk.g
 C:\Users\50235406\TP06PoniachikDanaFalk\obj\Debug\net9.0\ref\TP06PoniachikDanaFalk.dll
 C:\Users\50235406\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\yupblgb4dr-u0i6hhv4kj.gz
 C:\Users\50235406\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\muupcp0o5b-5t5s7vke2e.gz
-C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\yupblgb4dr-u0i6hhv4kj.gz
-C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\muupcp0o5b-pm92wzaq1a.gz
+C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\yupblgb4dr-pru290aenk.gz
+C:\Users\50705111\TP06PoniachikDanaFalk\obj\Debug\net9.0\compressed\muupcp0o5b-oi5e5d71bs.gz

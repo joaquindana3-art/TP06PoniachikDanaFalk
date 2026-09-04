@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TP06PoniachikDanaFalk")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+694e56179455c732f08c24190008573b0b092179")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+137e967db942f0236c94b488b84f86a401f824d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("TP06PoniachikDanaFalk")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TP06PoniachikDanaFalk")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8,7 +8,6 @@ function ArriesgarLetra() {
     let palabraOculta = document.getElementById("palabraOculta")
     let intentos = document.getElementById("intentos")
     let error = document.getElementById("error")
-    let i = document.getElementById("i")
     if (!letra || !palabraOculta || !intentos || !error || !palabra) {
         return
     }
@@ -20,11 +19,10 @@ function ArriesgarLetra() {
 
             if (palabra.value[i] === letra.value.toUpperCase()) {
 
-                let letraMostrada  = palabraOculta.innerHTML.split("")
+                let letraMostrada = palabraOculta.innerHTML.split("")
                 letraMostrada[i] = letra.value.toUpperCase()
                 palabraOculta.innerHTML = letraMostrada.join("")
                 encontrado = true
-                i.value = parseInt(i.value) + 1
                 
 
             }
@@ -133,6 +131,28 @@ function ArriesgarPalabra() {
         cantIncorrectas.innerHTML++
         resultado.innerHTML = "Incorrecto";
         resultado.style.color = "red";
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function verificarRespuesta() {
+
+    const respuesta = document.getElementById("respuesta");
+    if (respuesta.toUpperCase() == "AUTOBUS" || respuesta.toUpperCase() == "AUTOBÚS") {
+        document.getElementById("resultado").innerHTML = "¡Correcto! Has completado la tercera habitación.";
+        document.getElementById("resultado").style.color = "green";
     }
 
 }
