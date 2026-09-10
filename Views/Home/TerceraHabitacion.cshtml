@@ -1,6 +1,37 @@
+@{
+    List<Adivinanzas> adivinanzas = ViewBag.adivinanzas as List<Adivinanzas> ?? new List<Adivinanzas>();
+    int i = ViewBag.i != null ? (int)ViewBag.i : 0;
+    int aciertos = ViewBag.aciertos != null ? (int)ViewBag.aciertos : 0;
+    string resultado = ViewBag.resultado as string ?? string.Empty;
+}
+
 <h1>Tercera Habitación</h1>
-<p>Vuelo alto sin alas, llevo a cien pasajeros en la panza y canto una melodía antes de que salten. ¿Quién soy?</p>
-<input type="text" id="respuesta" name="respuesta" required />
-<p></p>
-<button type="submit" onclick="verificarRespuesta()">Verificar</button>
-<div id="resultado"></div>
+
+@if (adivinanzas.Count == 0)
+{
+    <p>No hay adivinanzas cargadas en la base de datos.</p>
+}
+else if (i >= adivinanzas.Count)
+{
+    <p>¡Completaste todas las adivinanzas!</p>
+    <p>Aciertos: @aciertos</p>
+    <a href="/Home/Index">Volver al inicio</a>
+}
+else
+{
+    <p>@adivinanzas[i].adivinanza</p>
+
+    @if (!string.IsNullOrEmpty(resultado))
+    {
+        <div id="resultado">@resultado</div>
+    }
+
+    <form asp-action="TerceraHabitacion" method="post">
+        <input type="text" id="respuesta" name="respuesta" required />
+        <input type="hidden" name="i" value="@i" />
+        <input type="hidden" name="aciertos" value="@aciertos" />
+        <button type="submit">Verificar</button>
+    </form>
+
+    <p>Aciertos: @aciertos</p>
+}

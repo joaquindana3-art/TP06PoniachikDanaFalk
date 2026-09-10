@@ -34,4 +34,18 @@ public class BD
         string query = "SELECT * FROM PalabrasRosco";
         return connection.Query<PalabrasRosco>(query).ToList();
     }
+
+    public List<Adivinanzas> adivinanzas()
+    {
+        try
+        {
+            using SqlConnection connection = new SqlConnection(_connectionString);
+            string query = "SELECT ID, adivinanza, respuesta FROM adivinanza ORDER BY ID";
+            return connection.Query<Adivinanzas>(query).ToList();
+        }
+        catch (SqlException ex) when (ex.Number == 208)
+        {
+            return new List<Adivinanzas>();
+        }
+    }
 }

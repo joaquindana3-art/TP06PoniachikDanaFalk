@@ -1994,23 +1994,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\50705111\\.nuget\\packages\\": {},
+    "C:\\Users\\50235406\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\50705111\\TP06PoniachikDanaFalk\\TP06PoniachikDanaFalk.csproj",
+      "projectUniqueName": "C:\\Users\\50235406\\TP06PoniachikDanaFalk\\TP06PoniachikDanaFalk.csproj",
       "projectName": "TP06PoniachikDanaFalk",
-      "projectPath": "C:\\Users\\50705111\\TP06PoniachikDanaFalk\\TP06PoniachikDanaFalk.csproj",
-      "packagesPath": "C:\\Users\\50705111\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\50705111\\TP06PoniachikDanaFalk\\obj\\",
+      "projectPath": "C:\\Users\\50235406\\TP06PoniachikDanaFalk\\TP06PoniachikDanaFalk.csproj",
+      "packagesPath": "C:\\Users\\50235406\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\50235406\\TP06PoniachikDanaFalk\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\50705111\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\50235406\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

@@ -80,7 +80,56 @@ public class HomeController : Controller
 
     public IActionResult TerceraHabitacion()
     {
-        return View();
+        return CargarTerceraHabitacion(0, 0, "");
+    }
+
+    [HttpPost]
+    public IActionResult TerceraHabitacion(string respuesta, int i, int aciertos)
+    {
+        BD bd = new BD();
+        List<Adivinanzas> adivinanzas = bd.adivinanzas();
+
+        if (adivinanzas.Count == 0)
+        {
+            return CargarTerceraHabitacion(0, 0, "No hay adivinanzas cargadas en la base de datos.");
+        }
+
+        if (i < 0)
+        {
+            i = 0;
+        }
+
+        if (i >= adivinanzas.Count)
+        {
+            return CargarTerceraHabitacion(i, aciertos, "¡Completaste todas las adivinanzas!");
+        }
+
+        if (!string.IsNullOrWhiteSpace(respuesta) && respuesta.Trim().Equals(adivinanzas[i].respuesta.Trim(), StringComparison.OrdinalIgnoreCase))
+        {
+            aciertos++;
+            i++;
+
+            if (i >= adivinanzas.Count)
+            {
+                return CargarTerceraHabitacion(i, aciertos, "¡Correcto! Completaste todas las adivinanzas.");
+            }
+
+            return CargarTerceraHabitacion(i, aciertos, "¡Correcto! Pasaste a la siguiente adivinanza.");
+        }
+
+        return CargarTerceraHabitacion(i, aciertos, "Incorrecto. Intenta otra vez.");
+    }
+
+    private IActionResult CargarTerceraHabitacion(int i, int aciertos, string resultado)
+    {
+        BD bd = new BD();
+        List<Adivinanzas> adivinanzas = bd.adivinanzas();
+
+        ViewBag.adivinanzas = adivinanzas;
+        ViewBag.i = i;
+        ViewBag.aciertos = aciertos;
+        ViewBag.resultado = resultado;
+        return View("TerceraHabitacion");
     }
 
     public IActionResult Privacy()
