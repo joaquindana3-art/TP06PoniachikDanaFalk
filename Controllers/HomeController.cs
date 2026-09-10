@@ -132,6 +132,28 @@ public class HomeController : Controller
         return View("TerceraHabitacion");
     }
 
+     public IActionResult CuartaHabitacion()
+    {
+        return View("CuartaHabitacion");
+    }
+
+    [HttpPost]
+    public IActionResult CuartaHabitacion(string codigo)
+    {
+        if (!string.IsNullOrWhiteSpace(codigo) && codigo.Trim().Equals("escapaste", StringComparison.OrdinalIgnoreCase))
+        {
+            return View("Escapaste");
+        }
+
+        ViewBag.Mensaje = "Código incorrecto. Intenta otra vez.";
+        return View("CuartaHabitacion");
+    }
+
+    public IActionResult Escapaste()
+    {
+        return View();
+    }
+
     public IActionResult Privacy()
     {
         return View();

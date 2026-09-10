@@ -17,10 +17,6 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
-}
-
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
@@ -29,10 +25,20 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
 .segundaHabitacion {
   text-decoration: none;
   color: white;
 }
+
 .escondido {
   color: white;
+}
+
+.index{
+  background-image: url('/img/agencia.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+ 
 }

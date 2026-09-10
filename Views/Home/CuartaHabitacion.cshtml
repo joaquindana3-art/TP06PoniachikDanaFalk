@@ -1,0 +1,14 @@
+<h1>Cuarta Habitación, descifrá el codigo</h1>
+<img src="/img/emojis.png" alt="Cuarta Habitación">
+<h1>😡🤬😷😀🥰😀🤬🤪😡</h1>
+
+@if (!string.IsNullOrEmpty(ViewBag.Mensaje))
+{
+    <p>@ViewBag.Mensaje</p>
+}
+
+<form asp-action="CuartaHabitacion" method="post">
+    <label for="codigo">Ingrese el código:</label>
+    <input type="text" id="codigo" name="codigo" required>
+    <button type="submit">Enviar</button>
+</form>
