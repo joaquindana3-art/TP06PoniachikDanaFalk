@@ -19,13 +19,22 @@ Palabras incorrectas: <p id="cantPalabrasIncorrectas">@palabrasIncorrectas</p>
 }
 @if (i >= palabrasRosco.Count && palabrasCorrectas >= palabrasIncorrectas)
 {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const main = document.querySelector("main");
+            if (main) {
+                main.style.backgroundColor = "darkgreen";
+                main.style.padding = "1%";
+            }
+        });
+    </script>
     <p>Completaste el rosco.</p>
-    <a href="/Home/TerceraHabitacion">Siguiente habitación</a>
+    <a href="/Home/TerceraHabitacion" class="segundaHabitacion">Siguiente habitación</a>
 }
 else if (i >= palabrasRosco.Count && palabrasCorrectas < palabrasIncorrectas)
 {
     <p>Perdiste el rosco.</p>
-    <a href="/Home/SegundaHabitacion">Reintentar</a>
+    <a href="/Home/SegundaHabitacion" class="segundaHabitacion">Reintentar</a>
 }
 else
 {
@@ -33,11 +42,10 @@ else
     <p id="pista">@palabrasRosco[i].pista</p>
 
     <form asp-action="SegundaHabitacion" method="post">
-        <input type="text" id="respuesta" name="respuesta" required />
+        <input type="text" autocomplete="off" id="respuesta" name="respuesta" required />
         <input type="hidden" name="i" value="@i" />
         <input type="hidden" name="palabrasCorrectas" value="@palabrasCorrectas" />
         <input type="hidden" name="palabrasIncorrectas" value="@palabrasIncorrectas" />
         <button type="submit">Arriesgar palabra</button>
     </form>
 }
-<a class="escondido" href="/Home/TerceraHabitacion">Siguiente habitación</a>

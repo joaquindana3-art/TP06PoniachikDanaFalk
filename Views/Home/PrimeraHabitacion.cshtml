@@ -6,12 +6,12 @@ Intentos restantes: <p id="intentos"></p></br>
 </div>
 <div id="resultado"></div>
 <div id="divLetra">
-Ingrese una letra: <input type="text" id="letra"/></br>
+Ingrese una letra: <input type="text" id="letra" autocomplete="off"/></br>
 </div>
 <input type="hidden" id="palabra" value="@ViewBag.palabra"></br>
 <button onclick="ArriesgarLetra()">Arriesgar letra</button></br>
 </br>
-<a href="/Home/SegundaHabitacion" class="segundaHabitacion">Siguiente habitación</a></br>
+<a href="/Home/SegundaHabitacion" id="segundaHabitacion" class="segundaHabitacion">Siguiente habitación</a></br>
 </br> 
 <p id="error"></p> </br>
-<script src="site.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>

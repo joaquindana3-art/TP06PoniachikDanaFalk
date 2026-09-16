@@ -7,15 +7,20 @@
 
 <h1>Tercera Habitación</h1>
 
-@if (adivinanzas.Count == 0)
+@if (i >= adivinanzas.Count)
 {
-    <p>No hay adivinanzas cargadas en la base de datos.</p>
-}
-else if (i >= adivinanzas.Count)
-{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const main = document.querySelector("main");
+            if (main) {
+                main.style.backgroundColor = "darkgreen";
+                main.style.padding = "1%";
+            }
+        });
+    </script>
     <p>¡Completaste todas las adivinanzas!</p>
     <p>Aciertos: @aciertos</p>
-    <a href="/Home/CuartaHabitacion">Siguiente habitación</a>
+    <a href="/Home/CuartaHabitacion" class="segundaHabitacion">Siguiente habitación</a>
 }
 else
 {
@@ -27,7 +32,7 @@ else
     }
 
     <form asp-action="TerceraHabitacion" method="post">
-        <input type="text" id="respuesta" name="respuesta" required />
+        <input type="text" autocomplete="off" id="respuesta" name="respuesta" required />
         <input type="hidden" name="i" value="@i" />
         <input type="hidden" name="aciertos" value="@aciertos" />
         <button type="submit">Verificar</button>

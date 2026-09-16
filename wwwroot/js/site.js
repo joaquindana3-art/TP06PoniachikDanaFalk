@@ -51,12 +51,12 @@ function resultado(palabraOculta, intentos) {
     const titulo = document.getElementById("titulo");
     const descripcion = document.getElementById("descripcion");
     let divLetras = document.getElementById("divLetras");
-    let segundaBtn = document.getElementById("segundaHabitacion");
 
     if (!palabraOculta.innerHTML.includes("_")) {
         resultado.innerHTML = "Ganaste";
         resultado.style.color = "lightgreen";
         document.querySelector("main").style.backgroundColor = "darkgreen";
+        document.querySelector("main").style.padding = "1%";
         descripcion.style.color = "white";
         palabraOculta.style.color = "white";
         divIntentos.style.color = "white";

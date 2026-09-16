@@ -1,5 +1,22 @@
+:root {
+  --fn-bg: #0f172a;
+  --fn-surface: #111c33;
+  --fn-surface-strong: #111c33;
+  --fn-border: rgba(255, 255, 255, 0.12);
+  --fn-text: #f6f7ff;
+  --fn-muted: #bac1ea;
+  --fn-purple: #8b5cff;
+  --fn-purple-deep: #5a22d6;
+  --fn-blue: #00d4ff;
+  --fn-pink: #ff4fd8;
+  --fn-lime: #b7ff4a;
+  --fn-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
 html {
   font-size: 14px;
+  position: relative;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -8,37 +25,234 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+body {
+  background: var(--fn-bg);
+  color: var(--fn-text);
+  min-height: 100vh;
+  font-family: "Segoe UI", "Trebuchet MS", Arial, sans-serif;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+body::before {
+  content: none;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.15rem rgba(0, 212, 255, 0.18), 0 0 0 0.35rem rgba(139, 92, 255, 0.25);
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+  color: rgba(246, 247, 255, 0.55);
   text-align: start;
 }
 
-.segundaHabitacion {
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+a {
+  color: var(--fn-blue);
   text-decoration: none;
-  color: white;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+a:hover {
+  color: var(--fn-pink);
+  text-shadow: 0 0 14px rgba(255, 79, 216, 0.35);
+}
+
+.btn {
+  border: 0;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.72rem 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  filter: brightness(1.06);
+}
+
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-secondary,
+.btn-warning,
+.btn-danger {
+  color: #fff;
+  background: linear-gradient(135deg, var(--fn-purple) 0%, var(--fn-blue) 55%, var(--fn-pink) 100%);
+  box-shadow: 0 12px 30px rgba(0, 212, 255, 0.18), 0 10px 24px rgba(139, 92, 255, 0.22);
+}
+
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-info,
+.btn-outline-warning,
+.btn-outline-danger {
+  color: var(--fn-text);
+  border: 1px solid rgba(183, 255, 74, 0.55);
+  background: rgba(14, 19, 40, 0.38);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover,
+.btn-outline-success:hover,
+.btn-outline-info:hover,
+.btn-outline-warning:hover,
+.btn-outline-danger:hover {
+  color: #08111f;
+  background: linear-gradient(135deg, var(--fn-lime), var(--fn-blue));
+  border-color: transparent;
+}
+
+.form-control,
+.form-select {
+  background-color: rgba(10, 14, 30, 0.86);
+  border: 1px solid var(--fn-border);
+  border-radius: 1rem;
+  color: var(--fn-text);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: rgba(12, 16, 35, 0.94);
+  border-color: rgba(0, 212, 255, 0.7);
+  color: var(--fn-text);
+}
+
+.form-control::placeholder {
+  color: rgba(246, 247, 255, 0.5);
+}
+
+.form-check-input {
+  background-color: rgba(10, 14, 30, 0.86);
+  border-color: rgba(183, 255, 74, 0.5);
+}
+
+.form-check-input:checked {
+  background-color: var(--fn-purple);
+  border-color: var(--fn-blue);
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(22, 27, 56, 0.86), rgba(13, 17, 36, 0.92));
+  border: 1px solid var(--fn-border);
+  border-radius: 1.5rem;
+  color: var(--fn-text);
+  box-shadow: var(--fn-shadow);
+  backdrop-filter: blur(12px);
+}
+
+.navbar,
+.dropdown-menu,
+.modal-content,
+.table,
+.alert {
+  background: var(--fn-surface-strong);
+  color: var(--fn-text);
+  border-color: var(--fn-border);
+  box-shadow: var(--fn-shadow);
+}
+
+.navbar {
+  backdrop-filter: blur(12px);
+}
+
+.nav-link {
+  color: rgba(246, 247, 255, 0.9);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--fn-lime);
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
+  --bs-table-striped-color: var(--fn-text);
+  --bs-table-color: var(--fn-text);
+}
+
+.table thead th {
+  color: var(--fn-lime);
+  border-bottom-color: rgba(183, 255, 74, 0.25);
+}
+
+.pagination .page-link {
+  background: rgba(12, 16, 35, 0.82);
+  color: var(--fn-text);
+  border-color: var(--fn-border);
+}
+
+.pagination .page-link:hover {
+  color: #08111f;
+  background: linear-gradient(135deg, var(--fn-lime), var(--fn-blue));
+}
+
+.pagination .active .page-link {
+  background: linear-gradient(135deg, var(--fn-purple), var(--fn-pink));
+  border-color: transparent;
+}
+
+.segundaHabitacion {
+  background: transparent;
+  color: var(--fn-bg);
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  text-decoration: none;
+  transition: none;
+}
+
+.segundaHabitacion:link,
+.segundaHabitacion:visited,
+.segundaHabitacion:hover,
+.segundaHabitacion:active,
+.segundaHabitacion:focus {
+  color: var(--fn-bg);
 }
 
 .escondido {
-  color: white;
+  display: inline-flex !important;
 }
 
-.index{
-  background-image: url('/img/agencia.webp');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
- 
+.index {
+  position: relative;
+  background: var(--fn-bg);
+  overflow: hidden;
+}
+
+.index::after {
+  content: none;
+}
+
+.index > * {
+  position: relative;
+  z-index: 1;
+}
+
+.index img {
+  display: block;
+  margin: 1.5rem auto 0;
+  max-width: min(90vw, 720px);
+  height: auto;
+}
+
+::selection {
+  background: rgba(0, 212, 255, 0.28);
+  color: #ffffff;
 }
